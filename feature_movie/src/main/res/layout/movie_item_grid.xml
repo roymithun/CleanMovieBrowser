@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.tista.cleanmoviebrowser.feature.movie.domain.model.Movie" />
+
+        <variable
+            name="clickListener"
+            type="com.tista.cleanmoviebrowser.feature.movie.presentation.movielist.recyclerview.MovieListAdapter.OnItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="@{()->clickListener.onMovieItemClick(movie)}"
+        app:cardCornerRadius="10dp"
+        app:cardMaxElevation="5dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:elevation="2dp">
+
+            <ImageView
+                android:id="@+id/iv_poster"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:posterImage="@{movie.posterImageUrl}" />
+
+            <LinearLayout
+                android:id="@+id/ll_movie_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0.8"
+                android:background="@android:color/background_dark"
+                android:orientation="vertical"
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{movie.title + " (" + movie.formattedReleaseDate+")"}'
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="@android:color/white"
+                    tools:text="Some Title" />
+
+                <RatingBar
+                    android:id="@+id/pop_ratingbar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="@{(movie.voteAverage ?? 0.0f)/2}"
+                    android:stepSize="1" />
+
+                <TextView
+                    android:id="@+id/tv_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:text="@{movie.overview}"
+                    android:textColor="@android:color/white"
+                    android:textSize="11sp"
+                    tools:text="Some overview Some overview Some overview Some overview Some overview Some overview Some overview Some overview" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

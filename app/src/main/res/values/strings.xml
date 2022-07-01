@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CleanMovieBrowser</string>
+    <string name="title_feature_movies">Movies</string>
+    <string name="title_feature_movie">Movies</string>
+</resources>
