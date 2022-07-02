@@ -2,14 +2,14 @@ package com.tista.cleanmoviebrowser.feature.movie.data.database
 
 /*
 import com.tista.cleanmoviebrowser.feature.movie.TestData
-import com.tista.cleanmoviebrowser.feature.movie.data.roomTestModule
+import com.tista.cleanmoviebrowser.feature.movie.data.getRoomTestModule
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.After
 import org.junit.Before
 import org.junit.jupiter.api.Test
 import org.koin.core.context.GlobalContext.loadKoinModules
 import org.koin.test.KoinTest
-import org.koin.test.inject
+import org.koin.test.injectg
 
 
 class MovieDaoTest : KoinTest {

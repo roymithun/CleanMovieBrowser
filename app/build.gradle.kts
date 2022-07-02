@@ -72,6 +72,7 @@ dependencies {
     api(libs.bundles.stetho)
     api(libs.bundles.retrofit)
     api(libs.bundles.okhttp)
+    api(libs.okhttpprofiler)
     api(libs.play.core)
     api(libs.bundles.ktx)
     api(libs.bundles.navigation)

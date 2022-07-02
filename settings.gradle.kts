@@ -106,7 +106,14 @@ dependencyResolutionManagement {
             alias("okhttp-interceptor").to("com.squareup.okhttp3", "logging-interceptor")
                 .versionRef("okhttp")
             // bundle is basically an alias for several dependencies
-            bundle("okhttp", listOf("okhttp-okhttp", "okhttp-interceptor"))
+            bundle(
+                "okhttp",
+                listOf("okhttp-okhttp", "okhttp-interceptor")
+            )
+
+            version("okhttpprofiler-version", "1.0.8")
+            alias("okhttpprofiler").to("com.localebro", "okhttpprofiler")
+                .versionRef("okhttpprofiler-version")
 
             version("stetho", "1.5.0")
             alias("stetho-core").to("com.facebook.stetho", "stetho").versionRef("stetho")

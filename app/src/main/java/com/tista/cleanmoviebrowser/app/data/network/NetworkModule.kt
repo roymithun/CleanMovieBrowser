@@ -3,7 +3,6 @@ package com.tista.cleanmoviebrowser.app.data.network
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import com.tista.cleanmoviebrowser.app.data.network.AuthenticationInterceptor
 import com.tista.cleanmoviebrowser.BuildConfig
 import com.tista.cleanmoviebrowser.base.di.DateJsonAdapter
 import okhttp3.OkHttpClient
@@ -11,6 +10,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
+import com.localebro.okhttpprofiler.OkHttpProfilerInterceptor
 
 private const val CONNECTION_TIMEOUT = 10 // 10 seconds
 private const val READ_TIMEOUT = 2 // 2 seconds
@@ -51,6 +51,8 @@ internal fun providesHttpClient(
 
     builder.addInterceptor(stethoInterceptor)
     builder.addInterceptor(authenticationInterceptor)
-
+    if (BuildConfig.DEBUG) {
+        builder.addInterceptor(OkHttpProfilerInterceptor())
+    }
     return builder.build()
 }
