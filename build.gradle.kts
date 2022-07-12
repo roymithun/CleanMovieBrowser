@@ -10,7 +10,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-
     }
     // Gradle dependency locking - lock all configurations of the app
     // More: https://docs.gradle.org/current/userguide/dependency_locking.html

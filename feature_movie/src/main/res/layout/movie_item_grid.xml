@@ -7,11 +7,11 @@
 
         <variable
             name="movie"
-            type="com.tista.cleanmoviebrowser.feature.movie.domain.model.Movie" />
+            type="com.tista.feature.movie.domain.model.Movie" />
 
         <variable
             name="clickListener"
-            type="com.tista.cleanmoviebrowser.feature.movie.presentation.movielist.recyclerview.MovieListAdapter.OnItemClickListener" />
+            type="com.tista.feature.movie.presentation.movielist.recyclerview.MovieListAdapter.OnItemClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView

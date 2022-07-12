@@ -9,6 +9,7 @@ enableFeaturePreview("ONE_LOCKFILE_PER_PROJECT")
 
 include(
     ":app",
+    ":feature_movie",
     ":test_util_library"
 )
 
@@ -28,7 +29,7 @@ pluginManagement {
         id("com.android.dynamic-feature") version "7.2.1"
 
         val kotlinVersion: String by settings
-        id("org.jetbrains.kotlin.jvm") version kotlinVersion
+        id("org.jetbrains.kotlin.jvm") version "1.7.0"
         id("org.jetbrains.kotlin.android") version "1.7.0"
 
         val navigationVersion: String by settings
@@ -133,9 +134,9 @@ dependencyResolutionManagement {
 
             bundle("reactivex", listOf("rxjava", "rxandroid"))
 
-            alias("core-ktx").to("androidx.core:core-ktx:1.+")
+            alias("corektx").to("androidx.core:core-ktx:1.+")
             alias("fragment-ktx").to("androidx.fragment:fragment-ktx:1.+")
-            bundle("ktx", listOf("core-ktx", "fragment-ktx"))
+            bundle("ktx", listOf("corektx", "fragment-ktx"))
 
             version("lifecycle", "2.+")
             alias("viewmodel-ktx").to("androidx.lifecycle", "lifecycle-viewmodel-ktx")
@@ -218,4 +219,4 @@ dependencyResolutionManagement {
         }
     }
 }
-include(":feature_movie")
+include(":shared")

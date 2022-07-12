@@ -34,6 +34,8 @@ android {
 
 dependencies {
     implementation(project(":app"))
+    implementation(project(":shared"))
+
     api(libs.bundles.ktx)
     api(libs.bundles.lifecycle)
 

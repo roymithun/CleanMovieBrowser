@@ -5,11 +5,11 @@
 
     <data>
 
-        <import type="com.tista.cleanmoviebrowser.feature.movie.presentation.movielist.MovieListViewModel.ViewState" />
+        <import type="com.tista.feature.movie.presentation.movielist.MovieListViewModel.ViewState" />
 
         <variable
             name="viewModel"
-            type="com.tista.cleanmoviebrowser.feature.movie.presentation.movielist.MovieListViewModel" />
+            type="com.tista.feature.movie.presentation.movielist.MovieListViewModel" />
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         app:onRefreshListener="@{()->viewModel.loadData()}"
         app:refreshing="@{viewModel.state.loading}"
-        tools:context="com.tista.cleanmoviebrowser.feature.movie.presentation.movielist.MovieListFragment">
+        tools:context="com.tista.feature.movie.presentation.movielist.MovieListFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

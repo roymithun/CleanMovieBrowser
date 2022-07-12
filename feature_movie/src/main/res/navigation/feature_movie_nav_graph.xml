@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/movie_list_fragment"
-        android:name="com.tista.cleanmoviebrowser.feature.movie.presentation.movielist.MovieListFragment"
+        android:name="com.tista.feature.movie.presentation.movielist.MovieListFragment"
         android:label="fragment_movie_list"
         app:moduleName="feature_movie"
         tools:layout="@layout/fragment_movie_list">
@@ -17,11 +17,11 @@
     </fragment>
     <fragment
         android:id="@+id/movie_detail_fragment"
-        android:name="com.tista.cleanmoviebrowser.feature.movie.presentation.moviedetail.MovieDetailFragment"
+        android:name="com.tista.feature.movie.presentation.moviedetail.MovieDetailFragment"
         android:label="fragment_movie_detail"
         tools:layout="@layout/fragment_movie_detail">
         <argument
             android:name="movie"
-            app:argType="com.tista.cleanmoviebrowser.feature.movie.domain.model.Movie" />
+            app:argType="com.tista.feature.movie.domain.model.Movie" />
     </fragment>
 </navigation>
